@@ -1,10 +1,10 @@
-extern crate cpu_usage;
+extern crate cpu_monitor;
 
 use std::io;
 use std::thread;
 use std::time::Duration;
 
-use cpu_usage::CpuInstant;
+use cpu_monitor::CpuInstant;
 
 const CR_CODE: &'static str = "\x1b[G";
 const CLEAR_CODE: &'static str = "\x1b[K";

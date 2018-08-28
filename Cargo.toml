@@ -1,10 +1,10 @@
 [package]
-name = "cpu-usage"
+name = "cpu-monitor"
 version = "0.1.0"
 authors = ["Richard Dodd <richard.o.dodd@gmail.com>"]
 
-[dependencies]
-nom = "4"
+[target.'cfg(unix)'.dependencies]
+linux_proc = "0.1"
 
 [target.'cfg(windows)'.dependencies]
 winapi = "0.3"
