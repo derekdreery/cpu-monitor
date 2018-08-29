@@ -1,5 +1,4 @@
 use std::io;
-use std::mem;
 
 use winapi::shared::minwindef::FILETIME;
 use winapi::um::processthreadsapi::GetSystemTimes;
