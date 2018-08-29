@@ -6,5 +6,6 @@ authors = ["Richard Dodd <richard.o.dodd@gmail.com>"]
 [target.'cfg(unix)'.dependencies]
 linux_proc = "0.1"
 
-[target.'cfg(windows)'.dependencies]
-winapi = "0.3"
+[target.'cfg(windows)'.dependencies.winapi]
+version = "0.3"
+features = ["processthreadsapi", "minwindef"]
