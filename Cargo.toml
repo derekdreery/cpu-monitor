@@ -8,3 +8,9 @@ linux_proc = "0.1"
 
 [target.'cfg(windows)'.dependencies]
 winapi = "0.3"
+
+[build-dependencies]
+skeptic = "0.13"
+
+[dev-dependencies]
+skeptic = "0.13"
