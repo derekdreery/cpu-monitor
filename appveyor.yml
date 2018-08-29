@@ -10,13 +10,13 @@ environment:
     - TARGET: x86_64-pc-windows-msvc
     # Nightly channel
     - TARGET: i686-pc-windows-gnu
-      CHANNEL: nightly
+      RUST_VERSION: nightly
     - TARGET: i686-pc-windows-msvc
-      CHANNEL: nightly
+      RUST_VERSION: nightly
     - TARGET: x86_64-pc-windows-gnu
-      CHANNEL: nightly
+      RUST_VERSION: nightly
     - TARGET: x86_64-pc-windows-msvc
-      CHANNEL: nightly
+      RUST_VERSION: nightly
 
 # Install Rust and Cargo
 # (Based on from https://github.com/rust-lang/libc/blob/master/appveyor.yml)
@@ -28,7 +28,7 @@ install:
       $Env:PATH += ';C:\msys64\mingw32\bin'
     }
   - curl -sSf -o rustup-init.exe https://win.rustup.rs
-  - rustup-init.exe --default-host %TARGET% --default-toolchain %CHANNEL% -y
+  - rustup-init.exe --default-host %TARGET% --default-toolchain %RUST_VERSION% -y
   - set PATH=%PATH%;C:\Users\appveyor\.cargo\bin
   - rustc -Vv
   - cargo -V
