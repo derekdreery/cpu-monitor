@@ -22,11 +22,11 @@ environment:
 # (Based on from https://github.com/rust-lang/libc/blob/master/appveyor.yml)
 install:
   - ps: >-
-    If ($Env:TARGET -eq 'x86_64-pc-windows-gnu') {
-      $Env:PATH += ';C:\msys64\mingw64\bin'
-    } ElseIf ($Env:TARGET -eq 'i686-pc-windows-gnu') {
-      $Env:PATH += ';C:\msys64\mingw32\bin'
-    }
+      If ($Env:TARGET -eq 'x86_64-pc-windows-gnu') {
+        $Env:PATH += ';C:\msys64\mingw64\bin'
+      } ElseIf ($Env:TARGET -eq 'i686-pc-windows-gnu') {
+        $Env:PATH += ';C:\msys64\mingw32\bin'
+      }
   - curl -sSf -o rustup-init.exe https://win.rustup.rs
   - rustup-init.exe --default-host %TARGET% --default-toolchain %RUST_VERSION% -y
   - set PATH=%PATH%;C:\Users\appveyor\.cargo\bin
