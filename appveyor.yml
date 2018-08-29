@@ -3,11 +3,6 @@ environment:
     RUST_VERSION: stable
     PROJECT_NAME: cpu-monitor
   matrix:
-    allow_failures:
-      - RUST_VERSION: nightly
-      # Bug report: https://github.com/budziq/rust-skeptic/issues/87
-      - TARGET: i686-pc-windows-gnu
-      - TARGET: x86_64-pc-windows-gnu
     # Stable channel
     - TARGET: i686-pc-windows-gnu
     - TARGET: i686-pc-windows-msvc
@@ -22,6 +17,13 @@ environment:
       RUST_VERSION: nightly
     - TARGET: x86_64-pc-windows-msvc
       RUST_VERSION: nightly
+
+matrix:
+  allow_failures:
+    - RUST_VERSION: nightly
+    # Bug report: https://github.com/budziq/rust-skeptic/issues/87
+    - TARGET: i686-pc-windows-gnu
+    - TARGET: x86_64-pc-windows-gnu
 
 # Install Rust and Cargo
 # (Based on from https://github.com/rust-lang/libc/blob/master/appveyor.yml)
