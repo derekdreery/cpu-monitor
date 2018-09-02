@@ -48,8 +48,8 @@ build: false
 # Equivalent to Travis' `script` phase
 # TODO modify this phase as you see fit
 test_script:
-  - cargo build --verbose --all
-  - cargo test --verbose --all
+  - cargo build --verbose --all --features ci
+  - cargo test --verbose --all --features ci
 
 cache:
   - C:\Users\appveyor\.cargo\registry
