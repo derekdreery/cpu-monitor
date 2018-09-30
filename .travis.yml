@@ -7,7 +7,7 @@ matrix:
   allow_failures:
     - rust: nightly
   fast_finish: true
-cache: cargo
+#cache: cargo # This seems to break skeptic for some reason
 script:
   - cargo build --verbose --all --features ci
   - cargo test --verbose --all --features ci
